@@ -1,0 +1,12 @@
+{
+  "out": "out/tiktok_demo_launch_eve.mp4",
+  "handle": "@leonidaaintel",
+  "hook": ["GTA 6 DROPS", "TOMORROW"],
+  "hook_sub": "3 things to do tonight",
+  "items": [
+    {"title": "Check your preload", "sub": "Digital preloads opened Nov 12. Make sure yours finished."},
+    {"title": "Free up storage", "sub": "Clear space now, not when it unlocks."},
+    {"title": "Console only", "sub": "PS5 & Xbox Series X|S. No PC version announced yet."}
+  ],
+  "cta": "Follow for daily GTA 6 intel"
+}
