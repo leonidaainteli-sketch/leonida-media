@@ -1,0 +1,19 @@
+{
+  "out": "out/tiktok_demo_launch_eve_v2.mp4",
+  "handle": "@leonidaaintel",
+  "hook": ["GTA 6 DROPS", "TOMORROW"],
+  "hook_sub": "3 things to do tonight",
+  "items": [
+    {"title": "Check your preload", "sub": "Digital preloads opened Nov 12. Make sure yours finished."},
+    {"title": "Free up storage", "sub": "Clear space now, not when it unlocks."},
+    {"title": "Console only", "sub": "PS5 & Xbox Series X|S. No PC version announced yet."}
+  ],
+  "cta": "Follow for daily GTA 6 intel",
+  "backgrounds": [
+    "official/desktop_00.jpg",
+    "official/pre-load.jpg",
+    "official/ultimate_edition_squalo_01.jpg",
+    "official/launch-trailer_0_q-sdrgufc.jpg",
+    "official/an-extended-look.jpg"
+  ]
+}

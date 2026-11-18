@@ -119,6 +119,13 @@ class Renderer:
             if os.path.exists(p):
                 img = Image.open(p).convert("RGB")
                 self.bgs.append(img)
+        # darker where the text sits, lighter at the bottom so the image shows
+        self.shade = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        sd = ImageDraw.Draw(self.shade)
+        for y in range(H):
+            t = y / H
+            a = 150 if t < 0.55 else int(150 - 100 * (t - 0.55) / 0.45)
+            sd.line([(0, y), (W, y)], fill=(8, 6, 18, a))
         self.scenes = self.build_scenes()
         self.duration = sum(s[1] for s in self.scenes)
 
@@ -139,8 +146,7 @@ class Renderer:
             r = img.resize((nw, nh), Image.LANCZOS)
             x, y = (nw - W) // 2, (nh - H) // 2
             frame = r.crop((x, y, x + W, y + H)).convert("RGBA")
-            shade = Image.new("RGBA", (W, H), BG + (165,))
-            frame.alpha_composite(shade)
+            frame.alpha_composite(self.shade)
             return frame
         frame = self.base.copy()
         # sun slowly rising behind the text
@@ -230,6 +236,8 @@ class Renderer:
                     lines = self.cta_lines(d)
                 self.draw_text_block(frame, lines, t)
                 self.progress_bar(frame, t_global)
+                if self.bgs:
+                    ImageDraw.Draw(frame).text((SAFE_L, 222), "Image: Rockstar Games", font=font(F_SEMI, 30), fill=(230, 225, 245, 200))
                 return frame.convert("RGB")
             acc += dur
 
